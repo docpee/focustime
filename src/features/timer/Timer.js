@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Vibration, Platform } from 'react-native';
-import { useKeepAwake } from 'expo-keep-awake';
+import React, { useState } from "react";
+import { View, Text, StyleSheet, Vibration, Platform } from "react-native";
+import { useKeepAwake } from "expo-keep-awake";
 
-import { ProgressBar } from 'react-native-paper';
+import { ProgressBar } from "react-native-paper";
 
-import { colors } from '../../utils/colors';
-import { spacing } from '../../utils/sizes';
+import { colors } from "../../utils/colors";
+import { spacing } from "../../utils/sizes";
 
-import { Countdown } from '../../components/Countdown';
-import { RoundedButton } from '../../components/RoundedButton';
-import { Timing } from './Timing';
+import { Countdown } from "../../components/Countdown";
+import { RoundedButton } from "../../components/RoundedButton";
+import { Timing } from "./Timing";
 
 const DEFAULT_TIME = 0.1;
 
@@ -39,7 +39,7 @@ export const Timer = ({ focusSubject, onTimerEnd, clearSubject }) => {
   };
 
   const vibrate = () => {
-    if (Platform.OS === 'ios') {
+    if (Platform.OS === "ios") {
       const interval = setInterval(() => Vibration.vibrate(), 1000);
       setTimeout(() => clearInterval(interval), 10000);
     } else {
@@ -91,24 +91,24 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.white,
-    textAlign: 'center',
+    textAlign: "center",
   },
   task: {
     color: colors.white,
-    textAlign: 'center',
-    fontWeight: 'bold',
+    textAlign: "center",
+    fontWeight: "bold",
   },
   countdown: {
     flex: 0.5,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   buttonWrapper: {
     flex: 0.5,
-    alignItems: 'center',
+    alignItems: "center",
     padding: spacing.sm,
-    justifyContent: 'center',
-    flexDirection: 'row',
+    justifyContent: "center",
+    flexDirection: "row",
   },
   clearSubject: {
     paddingBottom: 25,

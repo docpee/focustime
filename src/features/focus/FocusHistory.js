@@ -1,15 +1,11 @@
-import React from 'react';
-import { View, Text, SafeAreaView, FlatList, StyleSheet } from 'react-native';
+import React from "react";
+import { View, Text, SafeAreaView, FlatList, StyleSheet } from "react-native";
 
-import { fontSizes, spacing } from '../../utils/sizes';
-import { RoundedButton } from '../../components/RoundedButton';
+import { fontSizes, spacing } from "../../utils/sizes";
+import { RoundedButton } from "../../components/RoundedButton";
 
 const HistoryItem = ({ item, index }) => {
   return <Text style={styles.historyItem(item.status)}>{item.subject}</Text>;
-};
-
-const clearHistory = () => {
-  onClear();
 };
 
 export const FocusHistory = ({ focusHistory, onClear }) => {
@@ -19,13 +15,13 @@ export const FocusHistory = ({ focusHistory, onClear }) => {
 
   return (
     <>
-      <SafeAreaView style={{ flex: 0.5, alignItems: 'center' }}>
+      <SafeAreaView style={{ flex: 0.5, alignItems: "center" }}>
         {!!focusHistory.length && (
           <>
             <Text style={styles.title}>Siamo concetrati su:</Text>
             <FlatList
               style={{ flex: 1 }}
-              contentContainerStyle={{ flex: 1, alignItems: 'center' }}
+              contentContainerStyle={{ flex: 1, alignItems: "center" }}
               data={focusHistory}
               renderItem={HistoryItem}
             />
@@ -45,15 +41,15 @@ export const FocusHistory = ({ focusHistory, onClear }) => {
 
 const styles = StyleSheet.create({
   historyItem: (status) => ({
-    color: status > 1 ? 'red' : 'green',
+    color: status > 1 ? "red" : "green",
     fontSize: fontSizes.md,
   }),
   title: {
-    color: 'white',
+    color: "white",
     fontSize: fontSizes.lg,
   },
   clearContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     padding: spacing.md,
   },
 });

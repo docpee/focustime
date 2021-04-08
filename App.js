@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Platform } from 'react-native';
+import React, { useState, useEffect } from "react";
+import { Text, View, StyleSheet, Platform } from "react-native";
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import { Focus } from './src/features/focus/Focus';
-import { Timer } from './src/features/timer/Timer';
-import { FocusHistory } from './src/features/focus/FocusHistory';
+import { Focus } from "./src/features/focus/Focus";
+import { Timer } from "./src/features/timer/Timer";
+import { FocusHistory } from "./src/features/focus/FocusHistory";
 
-import { colors } from './src/utils/colors';
-import { spacing } from './src/utils/sizes';
+import { colors } from "./src/utils/colors";
+import { spacing } from "./src/utils/sizes";
 
 const STATUSES = {
   COMPLETE: 1,
@@ -16,7 +16,7 @@ const STATUSES = {
 };
 
 export default function App() {
-  const [focusSubject, setFocusSubject] = useState('gardening');
+  const [focusSubject, setFocusSubject] = useState("gardening");
   const [focusHistory, setFocusHistory] = useState([]);
 
   // Così non abbiamo controllo
@@ -39,7 +39,7 @@ export default function App() {
 
   const saveFocusHistory = async () => {
     try {
-      await AsyncStorage.setItem('focusHistory', JSON.stringify(focusHistory));
+      await AsyncStorage.setItem("focusHistory", JSON.stringify(focusHistory));
     } catch (e) {
       console.log(e);
     }
@@ -47,7 +47,7 @@ export default function App() {
 
   const loadFocusHistory = async () => {
     try {
-      const history = await AsyncStorage.getItem('focusHistory');
+      const history = await AsyncStorage.getItem("focusHistory");
       if (history && JSON.parse(history).length) {
         setFocusHistory(JSON.parse(history));
       }
@@ -93,6 +93,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.darkBlue,
-    paddingTop: Platform.OS === 'ios' ? spacing.md : spacing.lg,
+    paddingTop: Platform.OS === "ios" ? spacing.md : spacing.lg,
   },
 });

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from "react";
+import { Text, View, StyleSheet } from "react-native";
 
-import { colors } from '../utils/colors';
-import { fontSizes } from '../utils/sizes';
+import { colors } from "../utils/colors";
+import { fontSizes } from "../utils/sizes";
 
 const minutesToMillis = (min) => min * 1000 * 60;
 const formatTime = (time) => (time < 10 ? `0${time}` : time);
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: fontSizes.xxxl,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: colors.white,
   },
 });
